@@ -1,0 +1,25 @@
+Package: gadMaps
+Type: Package
+Title: Geojson maps generator using data from http://gadm.org/ 
+Version: 1.0
+Authors@R: person("Dmitry", "Kisler", email = "admin@dkisler.de", role = c("aut", "cre"))
+Author: Dmitry Kisler [aut, cre]
+Maintainer: Dmitry Kisler <admin@dkisler.de>
+Description: The package generates geojson and plots the maps from http://gadm.org/
+License: GPL-3 | file LICENSE
+Encoding: UTF-8
+LazyData: true
+BugReports: admin@dkisler.de
+RoxygenNote: 6.0.1
+Imports:
+    dplyr,
+    readr,
+    sp,
+    rgdal,
+    spdplyr,
+    geojsonio,
+    jsonlite,
+    leaflet,
+    rvest, 
+    httr, 
+    XML
