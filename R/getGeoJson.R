@@ -1,3 +1,4 @@
+suppressPackageStartupMessages(require(dplyr))
 getGeoJson <- function(country, iso = FALSE, lvl = 0, saveRaw = FALSE, saveJson = TRUE, folder = "./")
 {
   #country ISO
@@ -27,6 +28,6 @@ getGeoJson <- function(country, iso = FALSE, lvl = 0, saveRaw = FALSE, saveJson 
     geojsonio::write_json(json, paste0(folder, file, ".json"))
   return( list(json = json,
                bbox = data.frame(
-                 c(lon_min = dat@bbox[1, 1], lon_max = dat@bbox[1, 2],
+                 cbind(lon_min = dat@bbox[1, 1], lon_max = dat@bbox[1, 2],
                    lat_min = dat@bbox[2, 1], lat_max = dat@bbox[2, 2]) ) ) )
 }
