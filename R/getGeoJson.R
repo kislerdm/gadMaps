@@ -4,9 +4,9 @@ getGeoJson <- function(country, iso = FALSE, lvl = 0, saveRaw = FALSE, saveJson 
   if(iso == T) {
     ISO_country <- country
   } else {
-    ISO_country <- gadMaps::countryISO(country)
+    ISO_country <- countryISO(country)
   }
-  iso_list <- gadMaps::iso3
+  iso_list <- iso3
   #detalisation lvl
   if(lvl > iso_list$maxlvl_map[iso_list$iso == ISO_country])
     lvl <- iso_list$maxlvl_map[iso_list$iso == ISO_country]
