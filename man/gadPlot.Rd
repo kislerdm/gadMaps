@@ -16,7 +16,7 @@
 \code{\link{leaflet}}
 }
 \examples{
-library(leaflet)
+#plotting Germany
 gadPlot("Germany", type = "country")
 }
 \keyword{ ~leaflet }

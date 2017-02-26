@@ -1,2 +1,7 @@
-exportPattern("^[[:alpha:]]+")
 importFrom("utils", "download.file")
+import("geojsonio")
+import("dplyr")
+import("leaflet")
+export("countryISO")
+export("getGeoJson")
+export("gadPlot")

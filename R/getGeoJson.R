@@ -21,12 +21,12 @@ getGeoJson <- function(country, iso = FALSE, lvl = 0, saveRaw = FALSE, saveJson 
   if(saveRaw == F)
     suppressMessages(file.remove(paste0(folder, file, ".rds")))
   #convert sp to json
-  json <- geojsonio::geojson_json( dat, geometry = "polygon", convert_wgs84 = T, group = paste0("ID_", lvl) )
+  json <- geojson_json( dat, geometry = "polygon", convert_wgs84 = T, group = paste0("ID_", lvl) )
   #save json map
   if(saveJson == T)
-    geojsonio::write_json(json, paste0(folder, file, ".json"))
+    write_json(json, paste0(folder, file, ".json"))
   return( list(json = json,
                bbox = data.frame(
                  cbind(lon_min = dat@bbox[1, 1], lon_max = dat@bbox[1, 2],
-                   lat_min = dat@bbox[2, 1], lat_max = dat@bbox[2, 2]) ) ) )
+                       lat_min = dat@bbox[2, 1], lat_max = dat@bbox[2, 2]) ) ) )
 }

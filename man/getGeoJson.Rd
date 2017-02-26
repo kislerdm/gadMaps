@@ -25,7 +25,6 @@ saveJson = TRUE, folder = "./") }
 \code{\link{geojson_json}}
 \code{\link{countryISO}}
 \code{\link{iso3}}
-\code{\link{sp}}
 }
 \references{ The map data are from \url{http://gadm.org/} }
 \author{ \href{mailto:admin@dkisler.de}{D.Kisler} }
