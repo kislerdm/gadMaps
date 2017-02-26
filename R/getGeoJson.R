@@ -1,4 +1,3 @@
-suppressPackageStartupMessages(require(dplyr))
 getGeoJson <- function(country, iso = FALSE, lvl = 0, saveRaw = FALSE, saveJson = TRUE, folder = "./")
 {
   #country ISO
