@@ -1,11 +1,8 @@
 getGeoJson <- function(country, iso = FALSE, lvl = 0, saveRaw = FALSE, saveJson = TRUE, folder = "./")
 {
   #country ISO
-  if(iso == T) {
-    ISO_country <- country
-  } else {
+  if(!iso)
     ISO_country <- countryISO(country)
-  }
   iso_list <- iso3
   #detalisation lvl
   if(lvl > iso_list$maxlvl_map[iso_list$iso == ISO_country])
@@ -14,7 +11,7 @@ getGeoJson <- function(country, iso = FALSE, lvl = 0, saveRaw = FALSE, saveJson 
   file <- paste0(ISO_country ,"_adm", lvl)
   #download sp tmp file
   link <- paste0("http://biogeo.ucdavis.edu/data/gadm2.8/rds/", file, ".rds")
-  download.file(link, destfile = paste0(folder, file, ".rds"), method = "curl", quiet = T)
+  download.file(link, destfile = paste0(folder, file, ".rds"), quiet = T)
   #reading spaciall polygons
   dat <- readRDS(paste0(folder, file, ".rds"))
   #delete the downloaded rds file if saveRaw is false
