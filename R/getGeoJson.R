@@ -1,6 +1,7 @@
 getGeoJson <- function(country, iso = FALSE, lvl = 0, saveRaw = FALSE, saveJson = TRUE, folder = "./")
 {
   #country ISO
+  ISO_country <- country
   if(!iso)
     ISO_country <- countryISO(country)
   iso_list <- iso3
